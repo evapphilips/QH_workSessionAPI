@@ -22,10 +22,10 @@ const config = require('./config');
 // db.loadDatabase();
 
 // load up mongoose
-mongoose.connect(config.MONGODB_URL, {useNewUrlParser: true});
+mongoose.connect(config.MONGODB_URI, {useNewUrlParser: true});
 const Schema = mongoose.Schema;
-const HelloSchema = new Schema({message:String});
-const HelloModel = mongoose.model('Hello', HelloSchema)
+// const HelloSchema = new Schema({message:String});
+// const HelloModel = mongoose.model('Hello', HelloSchema)
 
 /****************************
  * setting up important middleware functionality
@@ -73,9 +73,9 @@ app.get("/", challengeAuth, (req, res)=> {
 app.get("/api", challengeAuth, (req, res) => {
     console.log(req.body)
     
-    HelloModel.find({}, (err, doc)=> {
-        res.send(doc);
-    })
+    // HelloModel.find({}, (err, doc)=> {
+    //     res.send(doc);
+    // })
 })
 
 /**
@@ -83,9 +83,9 @@ app.get("/api", challengeAuth, (req, res) => {
   */
 app.post("/api", challengeAuth, (req, res) => {
     console.log(req.body)
-    HelloModel.create(req.body, (err, doc)=> {
-        res.send(doc);
-    })
+    // HelloModel.create(req.body, (err, doc)=> {
+    //     res.send(doc);
+    // })
 })
 
 // if all fails go here
