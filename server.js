@@ -26,6 +26,8 @@ mongoose.connect(config.MONGODB_URI, {useNewUrlParser: true});
 const Schema = mongoose.Schema;
 const HelloSchema = new Schema({message:String});
 const HelloModel = mongoose.model('Hello', HelloSchema)
+const TestSchema = new Schema({number: Int});
+const TestModel = mongoose.model(5, TestSchema)
 
 /****************************
  * setting up important middleware functionality
@@ -76,6 +78,10 @@ app.get("/api", challengeAuth, (req, res) => {
     HelloModel.find({}, (err, doc)=> {
         res.send(doc);
     })
+
+    TestModel.find({}, (err, doc)=> {
+        res.send(doc);
+    })
 })
 
 /**
@@ -84,6 +90,9 @@ app.get("/api", challengeAuth, (req, res) => {
 app.post("/api", challengeAuth, (req, res) => {
     console.log(req.body)
     HelloModel.create(req.body, (err, doc)=> {
+        res.send(doc);
+    })
+    TestModel.create(req.body, (err, doc)=> {
         res.send(doc);
     })
 })
