@@ -24,7 +24,12 @@ const config = require('./config');
 // load up mongoose
 mongoose.connect(config.MONGODB_URI, {useNewUrlParser: true});
 const Schema = mongoose.Schema;
-const HelloSchema = new Schema({message:String});
+// const HelloSchema = new Schema({message:String});
+// const HelloModel = mongoose.model('Hello', HelloSchema)
+const HelloSchema = new Schema({
+    message: String,
+    task: String
+})
 const HelloModel = mongoose.model('Hello', HelloSchema)
 
 /****************************
