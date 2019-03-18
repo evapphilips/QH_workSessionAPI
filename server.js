@@ -37,10 +37,7 @@ const HelloSchema = new Schema({
     prehunger: String,
     location: String,
     weather: String,
-    sound: {
-        type: Sound,
-        required: false
-    }
+    sound: String
 
 })
 const HelloModel = mongoose.model('Hello', HelloSchema)
