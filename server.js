@@ -28,16 +28,16 @@ const Schema = mongoose.Schema;
 // const HelloModel = mongoose.model('Hello', HelloSchema)
 const HelloSchema = new Schema({
     message:String,
-    task:String,
-    project:String,
-    place:String,
-    goal:String,
-    preexcitement:String,
-    precoffee:Int,
-    prehunger:String,
-    location:String,
-    weather:String,
-    sound:String
+    task:String
+    // project:String,
+    // place:String,
+    // goal:String,
+    // preexcitement:String,
+    // precoffee:Int,
+    // prehunger:String,
+    // location:String,
+    // weather:String,
+    // sound:String
 })
 const HelloModel = mongoose.model('Hello', HelloSchema)
 
