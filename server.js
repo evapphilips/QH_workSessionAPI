@@ -29,8 +29,8 @@ const Schema = mongoose.Schema;
 const HelloSchema = new Schema({
     //message:String,
     task:String,
-    project:String,
-    place:String
+    project:String
+    // place:String
     // goal:String,
     // preexcitement:String,
     // precoffee:Int,
