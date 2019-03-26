@@ -33,7 +33,7 @@ const HelloSchema = new Schema({
     goal:String,
     preexcitement:String,
     precoffee:{
-        type:String,
+        type:Number,
         required:false
     },
     prehunger:String,
