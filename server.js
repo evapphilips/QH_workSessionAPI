@@ -27,9 +27,15 @@ const Schema = mongoose.Schema;
 // const HelloSchema = new Schema({message:String});
 // const HelloModel = mongoose.model('Hello', HelloSchema)
 const HelloSchema = new Schema({
-    message:String,
-    task:String,
-    project:String
+    message:{
+        type:String
+    },
+    task:{
+        type:String
+    },
+    project:{
+        type:String
+    }
     // place:String
     // goal:String,
     // preexcitement:String,
