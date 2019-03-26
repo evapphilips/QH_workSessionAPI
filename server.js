@@ -25,27 +25,24 @@ const config = require('./config');
 mongoose.connect(config.MONGODB_URI, {useNewUrlParser: true});
 const Schema = mongoose.Schema;
 // const HelloSchema = new Schema({message:String});
-// const HelloModel = mongoose.model('Hello', HelloSchema)
+// const HelloModel = mongoose.model('Hello', HelloSchema);
 const HelloSchema = new Schema({
-    message:{
-        type:String
+    task:String,
+    project:String,
+    place:String,
+    goal:String,
+    preexcitement:String,
+    precoffee:{
+        type:String,
+        required:false
     },
-    task:{
-        type:String
-    },
-    project:{
-        type:String
-    }
-    // place:String
-    // goal:String,
-    // preexcitement:String,
-    // precoffee:Int,
-    // prehunger:String,
-    // location:String,
-    // weather:String,
-    // sound:String
-})
-const HelloModel = mongoose.model('Hello', HelloSchema)
+    prehunger:String,
+    location:String,
+    weather:String,
+    sound:String
+});
+
+const HelloModel = mongoose.model('Hello', HelloSchema);
 
 /****************************
  * setting up important middleware functionality
